@@ -17,7 +17,29 @@ public class Ejemplo2 {
     public static void main(String[] args) {
         // Creación de arreglo bidimensionales
         
-        double[][] dato1 = {{1, 2, 3},{6, 8, 9}}; //
+        double[][] dato1 = {{1, 2, 3},{6, 8, 9}};
+        double [][] arregloResultante = new double[2][3];
+        double valor;
+        String serie = "";
+        
+        for(int fila = 0; fila < dato1.length; fila++){
+           for(int colum = 0; colum < dato1[fila].length; colum++){
+              valor = dato1[fila][colum];
+               if (valor%2 == 0){
+                   arregloResultante[fila][colum] = Math.pow(valor, 2);   
+               }else{
+                   arregloResultante[fila][colum] = valor;
+               }
+           }
+        }
+        for(int fila = 0; fila < dato1.length; fila++){
+            serie = serie + "\n";
+            for(int colum = 0; colum < dato1[fila].length; colum++){
+                serie = String.format("%s%.0f\t", serie, arregloResultante[fila][colum]);
+            }
+        }
+           //CRISTIAN ESPINOSA
+        System.out.println(serie);
         /*
             1   4   3
             36  64  9
